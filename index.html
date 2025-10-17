@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieStream - Your Ultimate Movie Destination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <h2>Loading MovieStream...</h2>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>MovieStream</h1>
+            </div>
+            <div class="nav-search">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search movies..." autocomplete="off">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <div id="search-results" class="search-results hidden"></div>
+            </div>
+            <div class="nav-profile">
+                <div class="profile-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="hero-section" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-info">
+                    <h1 id="hero-title" class="hero-title">Loading...</h1>
+                    <p id="hero-overview" class="hero-overview">Discovering amazing content...</p>
+                    <div class="hero-meta">
+                        <span id="hero-year" class="hero-year"></span>
+                        <span id="hero-rating" class="hero-rating"></span>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="hero-play-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21"></polygon>
+                            </svg>
+                            Watch Now
+                        </button>
+                        <button class="btn btn-secondary" id="hero-info-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            More Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-backdrop">
+                <img id="hero-backdrop-img" src="" alt="" class="hero-backdrop-img">
+                <div class="hero-backdrop-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Movie Categories -->
+        <div class="categories-container">
+            <!-- Popular Movies Section -->
+            <section class="movie-section">
+                <div class="section-header">
+                    <h2>Popular Movies</h2>
+                    <div class="section-nav">
+                        <button class="nav-btn prev" data-section="popular">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="nav-btn next" data-section="popular">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="movies-scroll-container">
+                    <div id="popular-movies" class="movies-scroll" data-section="popular">
+                        <!-- Movie cards will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Now Playing Section -->
+            <section class="movie-section">
+                <div class="section-header">
+                    <h2>Now Playing</h2>
+                    <div class="section-nav">
+                        <button class="nav-btn prev" data-section="now-playing">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="nav-btn next" data-section="now-playing">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="movies-scroll-container">
+                    <div id="now-playing-movies" class="movies-scroll" data-section="now-playing">
+                        <!-- Movie cards will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Rated Section -->
+            <section class="movie-section">
+                <div class="section-header">
+                    <h2>Top Rated</h2>
+                    <div class="section-nav">
+                        <button class="nav-btn prev" data-section="top-rated">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="nav-btn next" data-section="top-rated">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="movies-scroll-container">
+                    <div id="top-rated-movies" class="movies-scroll" data-section="top-rated">
+                        <!-- Movie cards will be inserted here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="movie-modal" class="movie-modal hidden">
+        <div class="modal-backdrop">
+            <img id="modal-backdrop-img" src="" alt="" class="modal-backdrop-img">
+            <div class="modal-backdrop-overlay"></div>
+        </div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-info">
+                <div class="modal-poster">
+                    <img id="modal-poster-img" src="" alt="" class="modal-poster-img">
+                </div>
+                <div class="modal-details">
+                    <h1 id="modal-title" class="modal-title"></h1>
+                    <div class="modal-meta">
+                        <span id="modal-year" class="modal-year"></span>
+                        <span id="modal-runtime" class="modal-runtime"></span>
+                        <span id="modal-rating" class="modal-rating"></span>
+                    </div>
+                    <div id="modal-genres" class="modal-genres"></div>
+                    <p id="modal-overview" class="modal-overview"></p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary modal-play-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5,3 19,12 5,21"></polygon>
+                            </svg>
+                            Watch Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-cast" class="modal-cast">
+                <h3>Cast</h3>
+                <div id="cast-list" class="cast-list"></div>
+            </div>
+            <div id="modal-similar" class="modal-similar">
+                <h3>Similar Movies</h3>
+                <div id="similar-movies" class="similar-movies-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MovieStream</h3>
+                <p>Your ultimate movie streaming destination</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Now Playing</a></li>
+                    <li><a href="#">Top Rated</a></li>
+                    <li><a href="#">Upcoming</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MovieStream. All rights reserved. Powered by TMDB.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
