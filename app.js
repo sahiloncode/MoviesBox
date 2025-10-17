@@ -1,6 +1,6 @@
 // TMDB API Configuration
 const API_CONFIG = {
-    apiKey: 'e6bc28b6eb21ae2b4b56afabc4d97c79',
+    apiKey: 'b9af48dd394a86cbfe6a4f0f4a1c694b',
     baseUrl: 'https://api.themoviedb.org/3',
     imageBaseUrl: 'https://image.tmdb.org/t/p/w500',
     backdropBaseUrl: 'https://image.tmdb.org/t/p/original'
